@@ -24,6 +24,7 @@ class LinkedList {
     const node = new Node(value)
     if (this.isEmpty()) {
       this.head = node
+      this.tail = node
     } else {
       node.next = this.head
       this.head = node
@@ -35,22 +36,26 @@ class LinkedList {
     const node = new Node(value)
     if (this.isEmpty()) {
       this.head = node
+      this.tail = node
     } else {
       let prev = this.head
       while(prev.next) {
         prev = prev.next
       }
       prev.next = node
+      this.tail = node
     }
     this.size++
   }
 
   insert(value, index) {
-    if (index < 0 || index > this.size) {
+    if (index < 0 || index   > this.size) {
       return
     }
     if (index === 0) {
       this.prepend(value)
+    } else if (index === this.size) {
+      this.append(value)
     } else {
       const node = new Node(value)
       let prev = this.head
@@ -63,7 +68,7 @@ class LinkedList {
     }
   }
 
-  removeFrom(index) {
+  /* removeFrom(index) {
     if (index < 0 || index >= list.size) {
       return null
     }
@@ -81,7 +86,7 @@ class LinkedList {
     }
     this.size--
     return remocedNode.value
-  }
+  } */
 
   print() {
     if (this.isEmpty()) {
@@ -100,23 +105,23 @@ class LinkedList {
 
 const list = new LinkedList()
 
-console.log(list.isEmpty())
-console.log(list.getSize())
+list.prepend(10)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+list.append(20)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+list.insert(5, 0)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+list.insert(30, 3)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
 
-list.print()
-list.insert(10, 0)
-list.print()
-list.insert(20, 0)
-list.print()
-list.insert(30, 1)
-list.print()
-list.insert(40, 2)
-list.print()
-console.log(list.getSize())
-
-console.log(list.removeFrom(2))
-list.print()
-console.log(list.size)
 
 
 
