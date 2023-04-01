@@ -1,3 +1,11 @@
+class Node {
+  constructor(value) {
+    this.value = value
+    this.nextNode = null
+  }
+}
+
+
 class LinkedList {
   constructor() {
     this.head = null
@@ -18,23 +26,39 @@ class LinkedList {
       this.head = node
     } else {
       node.next = this.head
-      this.hear = node
+      this.head = node
     }
     this.size++
   }
+
+  print() {
+    if (this.isEmpty()) {
+      console.log('List is empty')
+    } else {
+      let curr = this.head
+      let listValues = ''
+      while(curr) {
+        listValues += `${curr.value} `
+        curr = curr.next
+      }
+      console.log(listValues)
+    }
+  }
+
 }
 
-class Node {
-  constructor(value) {
-    this.value = value
-    this.nextNode = null
-  }
-}
 
 const list = new LinkedList()
 
 console.log(list.isEmpty())
 console.log(list.getSize())
+
+list.print()
 list.prepend(10)
+list.print()
 list.prepend(20)
 list.prepend(30)
+list.print()
+
+
+
