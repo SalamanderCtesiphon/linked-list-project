@@ -5,7 +5,6 @@ class Node {
   }
 }
 
-
 class LinkedList {
   constructor() {
     this.head = null
@@ -44,9 +43,7 @@ class LinkedList {
       console.log(listValues)
     }
   }
-
 }
-
 
 const list = new LinkedList()
 
