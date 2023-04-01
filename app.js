@@ -68,25 +68,25 @@ class LinkedList {
     }
   }
 
-  /* removeFrom(index) {
+  removeFrom(index) {
     if (index < 0 || index >= list.size) {
       return null
     }
-    let remocedNode
+    let removedNode
     if (index === 0) {
-      remocedNode = this.head
+      removedNode = this.head
       this.head = this.head.next
     } else {
       let prev = this.head
       for(let i = 0; i < index - 1; i++) {
         prev = prev.next
       }
-      remocedNode = prev.next
-      prev.next = remocedNode.next
+      removedNode = prev.next
+      prev.next = removedNode.next
     }
     this.size--
-    return remocedNode.value
-  } */
+    return removedNode.value
+  }
 
   at(index) {
     if (index < 0 || index >= list.size) {
@@ -97,6 +97,10 @@ class LinkedList {
       curr = curr.next
     }
     return curr.value
+  }
+
+  pop() {
+    list.removeFrom(list.size - 1)
   }
 
   toSting() {
@@ -128,6 +132,8 @@ console.log(list.at(1))
 console.log(list.at(2))
 console.log(list.at(3))
 console.log(list.tail)
+list.pop()
+list.toSting()
 
 
 
