@@ -1,10 +1,15 @@
 // LinkedList factory function to represent the full list
 
-const LinkedList = (list) => {
-  return { list };
+class LinkedList {
+  constructor(list) {
+    this.list = list;
+  }
 }
 
 
-const Node = (value, nextNode) => {
-  return { value, nextNode };
+class Node {
+  constructor(value, nextNode) {
+    this.value = null;
+    this.nextNode = null;
+  }
 }
