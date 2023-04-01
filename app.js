@@ -121,6 +121,19 @@ list.insert(30, 3)
 list.print()
 console.log(`list size: ${list.size}`)
 console.log(list.tail)
+list.insert(15, 2)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+list.append(40)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+list.prepend(2)
+list.print()
+console.log(`list size: ${list.size}`)
+console.log(list.tail)
+
 
 
 
