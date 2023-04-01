@@ -99,17 +99,17 @@ class LinkedList {
     return curr.value
   }
 
-  print() {
+  toSting() {
     if (this.isEmpty()) {
       console.log('List is empty')
     } else {
       let curr = this.head
       let listValues = ''
       while(curr) {
-        listValues += `${curr.value} `
+        listValues += `( ${curr.value} ) -> `
         curr = curr.next
       }
-      console.log(listValues)
+      console.log(`${listValues}null`)
     }
   }
 }
@@ -121,12 +121,13 @@ list.insert(30, 0)
 list.prepend(20)
 list.prepend(10)
 list.append(40)
-list.print()
+list.toSting()
 console.log(`list size: ${list.size}`)
 console.log(list.at(0))
 console.log(list.at(1))
 console.log(list.at(2))
 console.log(list.at(3))
+console.log(list.tail)
 
 
 
