@@ -8,6 +8,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null
+    this.tail = null
     this.size = 0
   }
 
@@ -60,7 +61,26 @@ class LinkedList {
       prev.next = node
       this.size++
     }
+  }
 
+  removeFrom(index) {
+    if (index < 0 || index >= list.size) {
+      return null
+    }
+    let remocedNode
+    if (index === 0) {
+      remocedNode = this.head
+      this.head = this.head.next
+    } else {
+      let prev = this.head
+      for(let i = 0; i < index - 1; i++) {
+        prev = prev.next
+      }
+      remocedNode = prev.next
+      prev.next = remocedNode.next
+    }
+    this.size--
+    return remocedNode.value
   }
 
   print() {
@@ -93,6 +113,10 @@ list.print()
 list.insert(40, 2)
 list.print()
 console.log(list.getSize())
+
+console.log(list.removeFrom(2))
+list.print()
+console.log(list.size)
 
 
 
