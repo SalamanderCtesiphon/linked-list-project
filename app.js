@@ -1,4 +1,3 @@
-// LinkedList factory function to represent the full list
 
 class LinkedList {
   constructor(list) {
@@ -13,3 +12,5 @@ class Node {
     this.nextNode = null;
   }
 }
+
+console.log(Node);
