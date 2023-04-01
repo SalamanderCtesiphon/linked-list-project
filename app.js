@@ -1,7 +1,7 @@
 class Node {
   constructor(value) {
     this.value = value
-    this.nextNode = null
+    this.next = null
   }
 }
 
@@ -88,6 +88,17 @@ class LinkedList {
     return remocedNode.value
   } */
 
+  at(index) {
+    if (index < 0 || index >= list.size) {
+      return null
+    }
+    let curr = this.head
+    for(let i = 0; i < index; i++) {
+      curr = curr.next
+    }
+    return curr.value
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log('List is empty')
@@ -105,34 +116,18 @@ class LinkedList {
 
 const list = new LinkedList()
 
+
+list.insert(30, 0)
+list.prepend(20)
 list.prepend(10)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
-list.append(20)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
-list.insert(5, 0)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
-list.insert(30, 3)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
-list.insert(15, 2)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
 list.append(40)
 list.print()
 console.log(`list size: ${list.size}`)
-console.log(list.tail)
-list.prepend(2)
-list.print()
-console.log(`list size: ${list.size}`)
-console.log(list.tail)
+console.log(list.at(0))
+console.log(list.at(1))
+console.log(list.at(2))
+console.log(list.at(3))
+
 
 
 
